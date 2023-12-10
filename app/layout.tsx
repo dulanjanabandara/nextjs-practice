@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -19,7 +20,11 @@ export default function RootLayout({
     <html lang="en" data-theme="winter">
       <body className={inter.className}>
         <NavBar />
-        <main className="p-5">{children}</main>
+        <main className="p-5">
+            {/* <Suspense fallback={<p>Loading...</p>}> */}
+                {children}
+            {/* </Suspense> */}
+        </main>
       </body>
     </html>
   );
